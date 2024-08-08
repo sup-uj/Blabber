@@ -9,7 +9,7 @@ const AppLayout = () => WrappedComponent => {
             <>
                 <Title />
                 <Header />
-                <Grid container height={"calc(100vh-4rem)"}>
+                <Grid container height={"100vh"}>
                     <Grid
                         item
                         sm={4}
@@ -40,9 +40,9 @@ const AppLayout = () => WrappedComponent => {
                         }}>
                         Third
                     </Grid>
+                    ejdnkjwnss
                 </Grid>
 
-                {/* <div>Footer</div> */}
             </>
         )
     }
