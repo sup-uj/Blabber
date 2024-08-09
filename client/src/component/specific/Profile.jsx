@@ -23,7 +23,7 @@ const Profile = () => {
             <ProfileCard heading={"Bio"} text={"Hello this is Utkarsh Jaiswal"} />
             <ProfileCard
                 heading={"Username"}
-                text={"@sup-uj"}
+                text={"sup-uj"}
                 Icon={<UserNameIcon />}
             />
             <ProfileCard heading={"Name"} text={"Utkarsh Jaiswal"} Icon={<FaceIcon />} />
