@@ -12,7 +12,8 @@ export const samepleChats = [
       _id: "2",
       groupChat: true,
       members: ["1", "2"],
-    }
+    },
+    
 ]
 
 
