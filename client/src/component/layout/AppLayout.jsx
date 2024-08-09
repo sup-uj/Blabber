@@ -5,6 +5,7 @@ import { Grid } from '@mui/material'
 import ChatList from '../specific/ChatList'
 import { samepleChats } from '../../constants/sampleData'
 import { useParams } from 'react-router-dom'
+import Profile from '../specific/Profile'
 
 const AppLayout = () => WrappedComponent => {
     return (props) => {
@@ -12,7 +13,7 @@ const AppLayout = () => WrappedComponent => {
         const params = useParams();
         const chatId = params.chatId;
 
-        const handleDeleteChat = (e, chatId, groupChat) => {
+        const handleDeleteChat = (e, _id, groupChat) => {
             e.preventDefault();
             console.log("Delete Chat",_id,groupChat);
         };
@@ -52,7 +53,7 @@ const AppLayout = () => WrappedComponent => {
                             padding: "2rem",
                             bgcolor: "rgba(0,0,0,0.85)",
                         }}>
-                        Third
+                        <Profile/>
                     </Grid>
                 </Grid>
 
