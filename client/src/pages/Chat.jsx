@@ -1,4 +1,3 @@
-
 import React, {
   Fragment,
   useRef,
@@ -8,6 +7,14 @@ import { IconButton, Skeleton, Stack } from "@mui/material";
 import { grayColor, orange } from "../constants/color";
 import { InputBox } from "../component/StyledComponents";
 import { AttachFile as AttachFileIcon, Send as SendIcon } from "@mui/icons-material";
+import { sampleMessage } from "../constants/sampleData";
+import MessageComponent from "../component/shared/MessageComponent";
+import FileMenu from "../component/dialogs/FileMenu";
+
+const user={
+  _id:"jdsnjknds",
+  name:"Utkarsh Jaiswal"
+}
 
 const Chat = ({ chatId, user }) => {
 
@@ -27,9 +34,9 @@ const Chat = ({ chatId, user }) => {
           overflowY: "auto",
         }}
       >
-        {/* {allMessages.map((i) => (
+        {sampleMessage.map((i) => (
           <MessageComponent key={i._id} message={i} user={user} />
-        ))} */}
+        ))}
 
         {/* {userTyping && <TypingLoader />}
 
@@ -69,7 +76,7 @@ const Chat = ({ chatId, user }) => {
           <IconButton
             type="submit"
             sx={{
-              rotate: "-30deg",
+              // rotate: "-30deg",
               bgcolor: orange,
               color: "white",
               marginLeft: "1rem",
@@ -84,7 +91,7 @@ const Chat = ({ chatId, user }) => {
         </Stack>
       </form>
 
-      {/* <FileMenu anchorE1={fileMenuAnchor} chatId={chatId} /> */}
+      <FileMenu  />
     </Fragment>
   );
 };
