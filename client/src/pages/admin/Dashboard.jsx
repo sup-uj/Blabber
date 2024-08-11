@@ -20,6 +20,7 @@ import React from "react";
 import AdminLayout from "../../component/layout/AdminLayout";
 import { SearchField, CurveButton } from "../../component/StyledComponents";
 import { matBlack } from "../../constants/color";
+import { DoughnutChart, LineChart } from "../../component/specific/Charts";
 
 const Dashboard = () => {
 
@@ -108,7 +109,7 @@ const Dashboard = () => {
                 Last Messages
               </Typography>
 
-              {/* chart */}
+              <LineChart value={[2,399,3,2,324]}/>
             </Paper>
 
             <Paper
@@ -124,7 +125,7 @@ const Dashboard = () => {
                 maxWidth: "25rem",
               }}
             >
-              {/* doughnut chart */}
+                <DoughnutChart labels={["Single Chats","Group Chats"]} value={[23,66]}/>
 
               <Stack
                 position={"absolute"}
