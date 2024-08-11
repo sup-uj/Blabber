@@ -10,7 +10,7 @@ import React, { useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { bgGradient } from "../../constants/color";
 
-const isAdmin =true;
+const isAdmin =false;
 
 const AdminLogin = () => {
 
