@@ -13,6 +13,8 @@ app.use(isAuthenticated);
 
 app.post("/new", newGroupChat);
 
+app.get("/my", getMyChats);
+
 
 
 export default app;
