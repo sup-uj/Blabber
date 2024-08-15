@@ -35,9 +35,19 @@ const connectDB = (uri) => {
     console.log("emiing even")
   };
 
+  const uploadFilesToCloudinary = async (files = []) => {
+    
+  };
+  
+  const deletFilesFromCloudinary = async (public_ids) => {
+    // Delete files from cloudinary
+  };
+
   export {
     connectDB,
     sendToken,
     cookieOptions,
-    emitEvent
+    emitEvent,
+    uploadFilesToCloudinary,
+    deletFilesFromCloudinary
   };

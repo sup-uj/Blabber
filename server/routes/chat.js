@@ -10,6 +10,10 @@ import { addMembers } from "../controllers/chat.js";
 import { removeMember } from "../controllers/chat.js";
 import { leaveGroup } from "../controllers/chat.js";
 import { sendAttachments } from "../controllers/chat.js";
+import { getChatDetails } from "../controllers/chat.js";
+import { renameGroup } from "../controllers/chat.js";
+import { deleteChat } from "../controllers/chat.js";
+import { getMessages } from "../controllers/chat.js";
 
 const app = express.Router();
 
@@ -30,6 +34,14 @@ app.put("/removemember",removeMember);
 app.delete("/leave/:id",  leaveGroup);
 
 app.post("/message",attachmentsMulter,sendAttachments);
+
+app.get("/message/:id", getMessages);
+
+app
+  .route("/:id")
+  .get( getChatDetails)
+  .put(renameGroup)
+  .delete(deleteChat);
 
 
 
