@@ -62,6 +62,10 @@ const renameValidator = () => [
     body("name", "Please Enter New Name").notEmpty(),
 ];
 
+const sendRequestValidator = () => [
+    body("userId", "Please Enter User ID").notEmpty(),
+];
+
 
 export {
     registerValidator,
@@ -72,5 +76,6 @@ export {
     removeMemberValidator,
     sendAttachmentsValidator,
     chatIdValidator,
-    renameValidator
+    renameValidator,
+    sendRequestValidator
 }

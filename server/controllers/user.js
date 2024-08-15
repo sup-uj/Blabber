@@ -4,6 +4,10 @@ import { sendToken } from "../utils/features.js";
 import { compare } from "bcrypt";
 import { ErrorHandler } from "../utils/utility.js";
 import { cookieOptions } from "../utils/features.js";
+import { Chat } from "../models/chat.js";
+import { Request } from "../models/request.js";
+import { NEW_REQUEST } from "../constants/events.js";
+import { emitEvent, } from "../utils/features.js";
 
 const newUser = TryCatch(async (req, res, next) => {
     const { name, username, password, bio } = req.body;
@@ -100,6 +104,29 @@ const searchUser = TryCatch(async (req, res) => {
     });
   });
   
+  const sendFriendRequest = TryCatch(async (req, res, next) => {
+    const { userId } = req.body;
+  
+    const request = await Request.findOne({
+      $or: [
+        { sender: req.user, receiver: userId },
+        { sender: userId, receiver: req.user },
+      ],
+    });
+  
+    if (request) return next(new ErrorHandler("Request already sent", 400));
+  
+    await Request.create({
+      sender: req.user,
+      receiver: userId,
+    });
+  
+    emitEvent(req, NEW_REQUEST, [userId]);
+  
+    return res.status(200).json({
+      success: true,
+      message: "Friend Request Sent",
+    });
+  });
 
-
-export { login, newUser, getMyProfile, logout,searchUser }
+export { login, newUser, getMyProfile, logout,searchUser ,sendFriendRequest }
