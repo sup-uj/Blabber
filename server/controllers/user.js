@@ -8,7 +8,7 @@ import { Chat } from "../models/chat.js";
 import { Request } from "../models/request.js";
 import { NEW_REQUEST,REFETCH_CHATS } from "../constants/events.js";
 import { emitEvent, } from "../utils/features.js";
-import { getOtherMember } from "../lib/helper.js";
+import { getOtherMember  } from "../lib/helper.js";
 
 const newUser = TryCatch(async (req, res, next) => {
     const { name, username, password, bio } = req.body;
